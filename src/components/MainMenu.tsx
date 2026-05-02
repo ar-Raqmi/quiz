@@ -1,59 +1,49 @@
 import { useQuiz } from '../context/QuizContext';
-import { GraduationCap, Clock, BookOpen } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function MainMenu() {
   const { startPractice, startExam } = useQuiz();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white p-6 font-sans text-[#1c1b1f]">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-md w-full"
-      >
-        {/* Replaced M3ECard with standard Tailwind card */}
-        <div className="w-full bg-white border border-[#e0e0e0] rounded-[32px] shadow-sm p-10 flex flex-col gap-10 text-center">
-          <div className="flex flex-col items-center gap-6">
-            <div className="w-20 h-20 bg-[#ffe8e0] text-[#ff3500] rounded-3xl flex items-center justify-center">
-              <GraduationCap className="w-10 h-10" />
+    <section className="screen active landing flex flex-col items-center justify-center min-h-screen bg-[#111] text-white p-6 relative">
+      <div className="landing-content relative z-10 max-w-lg w-full text-center">
+        <div className="flex items-center justify-center gap-4 mb-10">
+          <div className="w-14 h-14 border-2 border-[#48f2e6] flex items-center justify-center font-black text-2xl text-[#48f2e6]">PC</div>
+          <div className="text-2xl font-bold font-sans">People<span className="text-[#48f2e6]">Cert</span></div>
+        </div>
+        
+        <h1 className="text-5xl font-extrabold mb-4 font-sans">Software Development Quiz</h1>
+        <p className="text-[#888] mb-12">Advanced Python — Test your software development knowledge</p>
+        
+        <div className="flex flex-col gap-4">
+          <button
+            onClick={startPractice}
+            className="group border-2 border-[#252525] bg-[#1a1a1a] p-6 text-left flex items-center gap-6 transition-all hover:border-[#ff3800] hover:bg-[#ff3800]/5"
+          >
+            <div className="w-12 h-12 border-2 border-[#ff3800] flex items-center justify-center text-[#ff3800] text-xl flex-shrink-0">
+              <i className="fas fa-book"></i>
             </div>
             <div>
-              <h1 className="text-4xl font-bold tracking-tight text-[#ff3500]">Software Development Quiz</h1>
-              <p className="text-[#1c1b1f]/70 mt-3 text-lg">Test your computer science knowledge</p>
+              <h3 className="font-bold text-lg mb-1">Practice Mode</h3>
+              <p className="text-sm text-[#888]">10 questions, instant feedback after each answer</p>
             </div>
-          </div>
-
-          <div className="flex flex-col gap-6">
-            {/* Replaced M3EButton with standard Tailwind button */}
-            <button
-              onClick={startPractice}
-              className="w-full flex items-center gap-4 bg-[#ff3500] text-white rounded-3xl p-6 transition-all hover:bg-[#ff5500] active:scale-[0.98]"
-            >
-              <div className="bg-white/20 p-4 rounded-full">
-                <BookOpen className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-xl">Practice Mode</div>
-                <div className="text-sm opacity-90 mt-1">10 random questions, instant feedback</div>
-              </div>
-            </button>
-
-            <button
-              onClick={startExam}
-              className="w-full flex items-center gap-4 bg-white border-2 border-[#ff3500] text-[#ff3500] rounded-3xl p-6 transition-all hover:bg-[#ffe8e0] active:scale-[0.98]"
-            >
-              <div className="bg-[#ff3500]/10 p-4 rounded-full">
-                <Clock className="w-8 h-8 text-[#ff3500]" />
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-xl">Exam Mode</div>
-                <div className="text-sm opacity-80 mt-1">All questions, 2 hours time limit</div>
-              </div>
-            </button>
-          </div>
+          </button>
+          
+          <button
+            onClick={startExam}
+            className="group border-2 border-[#252525] bg-[#1a1a1a] p-6 text-left flex items-center gap-6 transition-all hover:border-[#48f2e6] hover:bg-[#48f2e6]/5"
+          >
+            <div className="w-12 h-12 border-2 border-[#48f2e6] flex items-center justify-center text-[#48f2e6] text-xl flex-shrink-0">
+              <i className="fas fa-clock"></i>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-1">Exam Mode</h3>
+              <p className="text-sm text-[#888]">10 questions, 20 minute time limit, review at end</p>
+            </div>
+          </button>
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 }
+

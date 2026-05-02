@@ -1,145 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-@import "tailwindcss";
-
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-}
-
-body {
-  background-color: #ffffff !important;
-}
-
-/* Material 3 Expressive Theme Variables - New Theme */
+/* ===== GLOBAL THEME ===== */
 :root {
-  /* Primary Colors - Orange/Coral */
-  --m3e-primary: #ff3500;
-  --m3e-on-primary: #ffffff;
-  --m3e-primary-container: #ffe8e0;
-  --m3e-on-primary-container: #5c1200;
-
-  /* Secondary Colors - Cyan/Turquoise */
-  --m3e-secondary: #46f2e7;
-  --m3e-on-secondary: #003735;
-  --m3e-secondary-container: #ccfffc;
-  --m3e-on-secondary-container: #004d48;
-
-  /* Tertiary Colors - Blend */
-  --m3e-tertiary: #ff6b4a;
-  --m3e-on-tertiary: #ffffff;
-  --m3e-tertiary-container: #ffdcd4;
-  --m3e-on-tertiary-container: #4a1800;
-
-  /* Error Colors */
-  --m3e-error: #ba1a1a;
-  --m3e-on-error: #ffffff;
-  --m3e-error-container: #ffdad6;
-  --m3e-on-error-container: #410002;
-
-  /* Surface Colors */
-  --m3e-surface: #ffffff;
-  --m3e-on-surface: #1c1b1f;
-  --m3e-surface-variant: #f5f5f5;
-  --m3e-on-surface-variant: #49454f;
-
-  /* Background Colors */
-  --m3e-background: #ffffff;
-  --m3e-on-background: #1c1b1f;
-
-  /* Outline */
-  --m3e-outline: #79747e;
-  --m3e-outline-variant: #cac4d0;
-
-  /* Elevation */
-  --m3e-elevation-level0: 0px 0px 0px 0px rgba(0,0,0,0);
-  --m3e-elevation-level1: 0px 1px 2px 0px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15);
-  --m3e-elevation-level2: 0px 1px 2px 0px rgba(0,0,0,0.3), 0px 2px 6px 2px rgba(0,0,0,0.15);
-  --m3e-elevation-level3: 0px 1px 3px 0px rgba(0,0,0,0.3), 0px 4px 8px 3px rgba(0,0,0,0.15);
-  --m3e-elevation-level4: 0px 2px 3px 0px rgba(0,0,0,0.3), 0px 6px 10px 4px rgba(0,0,0,0.15);
-  --m3e-elevation-level5: 0px 4px 4px 0px rgba(0,0,0,0.3), 0px 8px 12px 6px rgba(0,0,0,0.15);
-
-  /* Motion */
-  --m3e-motion-duration-short1: 50ms;
-  --m3e-motion-duration-short2: 100ms;
-  --m3e-motion-duration-short3: 150ms;
-  --m3e-motion-duration-short4: 200ms;
-  --m3e-motion-duration-medium1: 250ms;
-  --m3e-motion-duration-medium2: 300ms;
-  --m3e-motion-duration-medium3: 350ms;
-  --m3e-motion-duration-medium4: 400ms;
-  --m3e-motion-duration-long1: 450ms;
-  --m3e-motion-duration-long2: 500ms;
-  --m3e-motion-duration-long3: 550ms;
-  --m3e-motion-duration-long4: 600ms;
-
-  /* Quiz App Specific Colors - New Theme */
-  --quiz-primary: #ff3500;
-  --quiz-secondary: #46f2e7;
-  --quiz-success: #46f2e7;
-  --quiz-success-container: #ccfffc;
-  --quiz-error: #ff3500;
-  --quiz-error-container: #ffe8e0;
-  --quiz-surface: #ffffff;
-  --quiz-surface-variant: #f5f5f5;
-  --quiz-border: #e0e0e0;
+  --red: #ff3800;
+  --cyan: #48f2e6;
+  --white: #ffffff;
+  --dark: #111111;
+  --dark2: #1a1a1a;
+  --dark3: #252525;
+  --gray: #888;
+  --light-gray: #ddd;
+  --off-white: #f0f0f0;
+  --correct: #2ecc71;
+  --wrong: #e74c3c;
+  --skipped: #f39c12;
 }
-
-/* M3E Component Overrides */
-m3e-button {
-  --m3e-button-container-shape: 20px;
-  --m3e-button-container-color: #ff3500;
-  --m3e-button-text-color: #ffffff;
-  --m3e-button-outlined-outline-color: #ff3500;
-  --m3e-button-outlined-text-color: #ff3500;
-  --m3e-button-tonal-container-color: #46f2e7;
-  --m3e-button-tonal-text-color: #003735;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'IBM Plex Sans', sans-serif; 
+    background: var(--dark); 
+    color: var(--white); 
+    min-height: 100vh; 
+    overflow-x: hidden; 
 }
-
-m3e-card {
-  --m3e-card-container-shape: 32px;
-  --m3e-card-elevated-container-color: #ffffff;
-  --m3e-card-filled-container-color: #f5f5f5;
-}
-
-m3e-progress {
-  --m3e-progress-track-height: 8px;
-  --m3e-progress-track-shape: 4px;
-  --m3e-progress-active-indicator-color: #ff3500;
-  --m3e-progress-track-color: #e0e0e0;
-}
-
-m3e-form-field {
-  --m3e-form-field-container-shape: 16px;
-  --m3e-form-field-focus-indicator-color: #ff3500;
-}
-
-m3e-select {
-  --m3e-select-container-shape: 16px;
-  --m3e-select-focus-indicator-color: #ff3500;
-}
-
-m3e-icon-button {
-  --m3e-icon-button-container-shape: 50%;
-  --m3e-icon-button-standard-icon-color: #ff3500;
-  --m3e-icon-button-filled-container-color: #ff3500;
-  --m3e-icon-button-filled-icon-color: #ffffff;
-}
-
-/* Ensure M3E components inherit fonts */
-m3e-button,
-m3e-card,
-m3e-form-field,
-m3e-select,
-m3e-option,
-m3e-tooltip {
-  font-family: var(--font-sans);
-}
-
-/* Animation preferences */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+/* Font overrides */
+h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+code { font-family: 'JetBrains Mono', monospace; }
