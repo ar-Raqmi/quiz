@@ -1,5 +1,4 @@
 import { useQuiz } from '../context/QuizContext';
-import { motion } from 'motion/react';
 
 export default function MainMenu() {
   const { startPractice, startExam } = useQuiz();
@@ -15,30 +14,30 @@ export default function MainMenu() {
         <h1 className="text-5xl font-extrabold mb-4 font-sans">Software Development Quiz</h1>
         <p className="text-[#888] mb-12">Advanced Python — Test your software development knowledge</p>
         
-        <div className="flex flex-col gap-4">
+        <div className="mode-cards flex flex-col gap-4">
           <button
             onClick={startPractice}
-            className="group border-2 border-[#252525] bg-[#1a1a1a] p-6 text-left flex items-center gap-6 transition-all hover:border-[#ff3800] hover:bg-[#ff3800]/5"
+            className="mode-card practice border-2 border-[#252525] bg-[#1a1a1a] p-6 text-left flex items-center gap-6 transition-all hover:border-[#ff3800] hover:bg-[#ff3800]/5"
           >
-            <div className="w-12 h-12 border-2 border-[#ff3800] flex items-center justify-center text-[#ff3800] text-xl flex-shrink-0">
+            <div className="mode-icon w-12 h-12 border-2 border-[#ff3800] flex items-center justify-center text-[#ff3800] text-xl flex-shrink-0">
               <i className="fas fa-book"></i>
             </div>
-            <div>
+            <div className="mode-info">
               <h3 className="font-bold text-lg mb-1">Practice Mode</h3>
-              <p className="text-sm text-[#888]">10 questions, instant feedback after each answer</p>
+              <p className="text-sm text-[#888]">10 random questions, instant feedback</p>
             </div>
           </button>
           
           <button
             onClick={startExam}
-            className="group border-2 border-[#252525] bg-[#1a1a1a] p-6 text-left flex items-center gap-6 transition-all hover:border-[#48f2e6] hover:bg-[#48f2e6]/5"
+            className="mode-card exam border-2 border-[#252525] bg-[#1a1a1a] p-6 text-left flex items-center gap-6 transition-all hover:border-[#48f2e6] hover:bg-[#48f2e6]/5"
           >
-            <div className="w-12 h-12 border-2 border-[#48f2e6] flex items-center justify-center text-[#48f2e6] text-xl flex-shrink-0">
+            <div className="mode-icon w-12 h-12 border-2 border-[#48f2e6] flex items-center justify-center text-[#48f2e6] text-xl flex-shrink-0">
               <i className="fas fa-clock"></i>
             </div>
-            <div>
+            <div className="mode-info">
               <h3 className="font-bold text-lg mb-1">Exam Mode</h3>
-              <p className="text-sm text-[#888]">10 questions, 20 minute time limit, review at end</p>
+              <p className="text-sm text-[#888]">All questions, 2 hours time limit</p>
             </div>
           </button>
         </div>
@@ -46,4 +45,5 @@ export default function MainMenu() {
     </section>
   );
 }
+
 
