@@ -5,9 +5,12 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    // Hardcode the base to your repository name
-    base: '/quiz/',
-    plugins: [react(), tailwindcss()],
+    // Relative base path for GitHub Pages
+    base: './',
+    plugins: [
+        react(),
+        tailwindcss()
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
@@ -18,5 +21,6 @@ export default defineConfig(() => {
     },
   };
 });
+
 
 

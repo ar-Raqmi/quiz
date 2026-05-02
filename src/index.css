@@ -1,26 +1,25 @@
-/* ===== GLOBAL THEME ===== */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: #ffffff !important;
+  font-family: var(--font-sans);
+  color: #1c1b1f;
+}
+
+/* Quiz App Specific Colors - New Theme */
 :root {
-  --red: #ff3800;
-  --cyan: #48f2e6;
-  --white: #ffffff;
-  --dark: #111111;
-  --dark2: #1a1a1a;
-  --dark3: #252525;
-  --gray: #888;
-  --light-gray: #ddd;
-  --off-white: #f0f0f0;
-  --correct: #2ecc71;
-  --wrong: #e74c3c;
-  --skipped: #f39c12;
+  --quiz-primary: #ff3500;
+  --quiz-secondary: #46f2e7;
+  --quiz-success: #46f2e7;
+  --quiz-success-container: #ccfffc;
+  --quiz-error: #ff3500;
+  --quiz-error-container: #ffe8e0;
+  --quiz-surface: #ffffff;
+  --quiz-surface-variant: #f5f5f5;
+  --quiz-border: #e0e0e0;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    font-family: 'IBM Plex Sans', sans-serif; 
-    background: var(--dark); 
-    color: var(--white); 
-    min-height: 100vh; 
-    overflow-x: hidden; 
-}
-/* Font overrides */
-h1, h2, h3 { font-family: 'Outfit', sans-serif; }
-code { font-family: 'JetBrains Mono', monospace; }
