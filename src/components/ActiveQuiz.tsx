@@ -59,7 +59,7 @@ export default function ActiveQuiz() {
         <div className="question-area border-2 border-[#111] bg-white p-8 rounded-none">
           <div className="q-header mb-6">
             <span className="bg-[#ff3800] text-white px-4 py-1 font-bold text-sm uppercase">
-              {question.tag}
+              {question.tag || 'Quiz'}
             </span>
           </div>
           <h2 className="text-2xl font-bold mb-6">{question.text}</h2>

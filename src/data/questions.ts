@@ -16,6 +16,7 @@ export type Option = {
 export type Question = {
   id: number;
   text: string;
+  tag?: string;
   codeSnippet?: string;
   language?: string;
   imageDescription?: string;
