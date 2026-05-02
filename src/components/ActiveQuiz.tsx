@@ -1,7 +1,7 @@
 import { useQuiz } from '../context/QuizContext';
 import { Bookmark, Clock, ArrowLeft, ArrowRight, CheckCircle2, XCircle, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import MermaidDiagram from './MermaidDiagram';
@@ -37,6 +37,11 @@ export default function ActiveQuiz() {
   const [showFeedback, setShowFeedback] = useState(false);
 
   const question = currentQuestions[currentQuestionIndex];
+  
+  const shuffledOptions = useMemo(() => {
+    return [...question.options].sort(() => Math.random() - 0.5);
+  }, [currentQuestionIndex, question.options]);
+
   const hasAnsweredCurrent = !!answers[question.id];
   const userAnswer = answers[question.id];
   const isCorrect = userAnswer === question.correctAnswer;
@@ -218,7 +223,7 @@ export default function ActiveQuiz() {
                   )}
 
                   <div className="space-y-2">
-                    {question.options.map((option, i) => {
+                    {shuffledOptions.map((option, i) => {
                       const letters = ['A','B','C','D'];
                       const isSelected = userAnswer === option.id;
                       let btnClass = "border-2 border-pc-off-white/80 bg-white hover:border-pc-cyan hover:bg-pc-cyan/5";
