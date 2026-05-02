@@ -1,16 +1,12 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import {defineConfig} from 'vite';
 
-export default defineConfig(({mode}) => {
-  const env = loadEnv(mode, '.', '');
-  const repoName = env.VITE_GITHUB_REPO || 'quiz';
-  const isGithubPages = env.VITE_GITHUB_PAGES === 'true';
-  const base = isGithubPages ? `/${repoName}/` : '/';
-
+export default defineConfig(() => {
   return {
-    base,
+    // Hardcode the base to your repository name
+    base: '/quiz/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
@@ -22,4 +18,5 @@ export default defineConfig(({mode}) => {
     },
   };
 });
+
 
