@@ -1,32 +1,48 @@
-# Software Development Quiz App
+<div align="center">
 
-<img src=".github/images/banner.png" width="500" alt="Quiz App Banner"/>
+# **Software Development Quiz App**
 
-A simple quiz app built with Vite + React. Test your knowledge with a clean, straightforward interface.
+<img src=".github/images/banner.png" width="650" alt="Quiz App Banner"/>
 
----
+### **"Test your knowledge with a clean, straightforward interface."**
+A simple, no-nonsense quiz app built with **Vite + React**. 
 
-## Screenshots
-
-<img src=".github/images/mainmenu.png" width="500" alt="Main Menu"/>
-*The home screen where you start your quiz*
-
-<img src=".github/images/quiz.png" width="500" alt="Quiz Screen"/>
-*Answer questions one by one*
-
-<img src=".github/images/exam_result.png" width="500" alt="Exam Result"/>
-*See your score at the end*
+[**Launch Live App 🚀**](https://softdev-quiz.vercel.app/)
 
 ---
 
-## Try it out
+## **Screenshots**
 
-You can run this app locally, or just use the live version—no install needed.
+| Main Menu | Quiz Screen | Results |
+| :---: | :---: | :---: |
+| <img src=".github/images/mainmenu.png" width="300" /> | <img src=".github/images/quiz.png" width="300" /> | <img src=".github/images/exam_result.png" width="300" /> |
+| *Where it all begins* | *The heat of the moment* | *The moment of truth* |
 
-**Live app:** https://softdev-quiz.vercel.app/
+</div>
 
-To run locally:
+---
+
+## **Try it out**
+
+You can hop straight into the questions via the live link, or tinker with the code locally.
+
+### **Run it locally**
+If you want to run the engine under the hood:
+
+1. **Install dependencies:**
 ```bash
 npm install
+```
+
+2. **Start the dev server:**
+```bash
 npm run dev
 ```
+
+---
+
+<div align="center">
+
+*🖋️ the pen hasn't lifted*
+
+</div>
